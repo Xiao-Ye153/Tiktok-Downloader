@@ -36,6 +36,10 @@
             margin: 0 auto;
             position: relative;
             z-index: 1;
+            /* PERBAIKAN: Tambahkan ini untuk teks tidak keluar */
+            overflow-x: hidden;
+            padding: 0 15px;
+            word-wrap: break-word;
         }
 
         /* Header */
@@ -429,6 +433,9 @@
             display: none;
             margin-top: 20px;
             backdrop-filter: blur(10px);
+            /* PERBAIKAN: Tambahkan ini */
+            max-width: 100%;
+            overflow: hidden;
         }
 
         .video-preview {
@@ -445,6 +452,9 @@
 
         .video-info {
             margin-bottom: 20px;
+            /* PERBAIKAN: Tambahkan ini */
+            max-width: 100%;
+            overflow: hidden;
         }
 
         .video-info h3, .resolution-section h3 {
@@ -456,6 +466,8 @@
         .info-grid {
             display: grid;
             gap: 8px;
+            /* PERBAIKAN: Tambahkan ini */
+            max-width: 100%;
         }
 
         .info-item {
@@ -475,11 +487,17 @@
             font-weight: 300;
             text-align: right;
             max-width: 60%;
+            /* PERBAIKAN: Tambahkan ini untuk teks panjang */
+            word-break: break-word;
+            overflow-wrap: break-word;
         }
 
         /* Resolution Section */
         .resolution-section {
             margin-top: 20px;
+            /* PERBAIKAN: Tambahkan ini */
+            max-width: 100%;
+            overflow: hidden;
         }
 
         .resolution-buttons {
@@ -625,6 +643,10 @@
 
         /* Responsive */
         @media (max-width: 480px) {
+            .container {
+                padding: 0 10px;
+            }
+            
             .resolution-buttons {
                 grid-template-columns: 1fr;
             }
@@ -635,6 +657,8 @@
             
             .result-section {
                 padding: 15px;
+                margin-left: -5px;
+                margin-right: -5px;
             }
             
             .download-notification {
@@ -654,6 +678,22 @@
             .download-btn {
                 padding: 15px;
                 font-size: 16px;
+            }
+            
+            /* PERBAIKAN: Untuk mobile - stack label dan value */
+            .info-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .info-value {
+                max-width: 100%;
+                text-align: left;
+                margin-top: 4px;
+            }
+            
+            .example-link {
+                font-size: 11px;
             }
         }
     </style>
